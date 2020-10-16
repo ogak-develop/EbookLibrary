@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const port = process.env.PORT || 3000
 
 const mongoose = require('mongoose')
 require('dotenv').config()
@@ -25,7 +24,7 @@ app.use('/', mainRoutes)
 mongoose.connect('mongodb+srv://'+ process.env.USER +':'+ process.env.PASSWORD +'@cluster0.ktbub.mongodb.net/'+ process.env.NAME +'?retryWrites=true&w=majority', 
 { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
-    app.listen(port, () =>{
+    app.listen(process.env.PORT || 3000, () =>{
         console.log('Connected to DB Server !'+'\nlistening on port '+ port)
     })
 })
