@@ -1,15 +1,12 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-
 const mongoose = require('mongoose')
 require('dotenv').config()
 const authRoutes = require('./src/routes/auth.routes')
-// const getdateRoute = require('./src/routes/getdate.routes')
 const ebookRoutes = require('./src/routes/ebook.routes')
 const userRoutes = require('./src/routes/register.routes')
 const mainRoutes = require('./src/routes/main.routes')
-
 const port = process.env.PORT || 8080
 
 app.use(cors())
