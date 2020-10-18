@@ -8,6 +8,23 @@ const ebookRoutes = require('./src/routes/ebook.routes')
 const userRoutes = require('./src/routes/register.routes')
 const mainRoutes = require('./src/routes/main.routes')
 const port = process.env.PORT || 8080
+const swaggerJsDoc = require('swagger-jsdoc')
+const swaggerUi = require('swagger-ui-express')
+
+//API Documentation
+const apiDoc = {
+    definition: {
+        inf0: {
+            title: 'Ebook Library API',
+            version: '1.0.0'
+        },
+    },
+    apis = ['app.js']
+}
+
+const swaggerDoc = swaggerJsDoc(apiDoc)
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
 
 app.use(cors())
 app.use(express.json())
