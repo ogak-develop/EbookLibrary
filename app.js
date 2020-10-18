@@ -14,7 +14,7 @@ const swaggerUi = require('swagger-ui-express')
 //API Documentation
 const apiDoc = {
     definition: {
-        inf0: {
+        info: {
             title: 'Ebook Library API',
             version: '1.0.0'
         },
