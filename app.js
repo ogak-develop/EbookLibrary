@@ -25,7 +25,34 @@ const apiDoc = {
 const swaggerDoc = swaggerJsDoc(apiDoc)
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
-
+/**
+ * @swagger
+ *
+ * /api/v1/users/register:
+ *   post:
+ *     description: Register to the application
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: User's name
+ *         description: User's name
+ *         in: JSON
+ *         required: true
+ *         type: string
+ *       - email: example@emailprovider.com
+ *         description: Use valid email to registration
+ *         in: JSON
+ *         required: true
+ *         type: string
+ *       - name: password
+ *         description: User's password.
+ *         in: JSON
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: Registration
+ */
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: 'true'}))
