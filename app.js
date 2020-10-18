@@ -19,7 +19,7 @@ const apiDoc = {
             version: '1.0.0'
         },
     },
-    apis = ['app.js']
+    apis: ['app.js']
 }
 
 const swaggerDoc = swaggerJsDoc(apiDoc)
